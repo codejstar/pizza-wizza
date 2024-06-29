@@ -5,7 +5,7 @@ import React, { useContext, useState } from "react";
 
 const Card = (props) => {
   const data = props.foodData;
-  console.log(data);
+  // console.log(data);
   const { state, dispatch } = useContext(CartContext);
   const priceOptions = Object.keys(data.price);
   const [size, setSize] = useState(priceOptions[0]);
