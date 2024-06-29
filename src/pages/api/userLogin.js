@@ -37,7 +37,7 @@ export default async function handler(req, res) {
       success = true;
       res.json({ success: success, authToken: authToken, isAdmin: isAdmin });
     } catch (error) {
-      console.log(error.message);
+      // console.log(error.message);
       res.send("Server Error");
     }
   }

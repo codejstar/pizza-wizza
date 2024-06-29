@@ -8,7 +8,7 @@ import Head from "next/head";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home({ data }) {
-  console.log(data);
+  // console.log(data);
   let categories = new Set();
   let categoryArray;
   const [typeFilter, setTypeFilter] = useState(false);
@@ -20,9 +20,9 @@ export default function Home({ data }) {
   };
 
   handleData();
-  // useEffect(() => {
-  //   localStorage.setItem("isAdmin", false); //added this line here to prevent anyone from accessing /admin if not logged in.
-  // }, []);
+  useEffect(() => {
+    localStorage.setItem("isAdmin", false); //added this line here to prevent anyone from accessing /admin if not logged in.
+  }, []);
 
   categoryArray = [...categories];
 
@@ -114,7 +114,7 @@ export async function getStaticProps() {
       .then((response) => response.json())
       .catch((error) => error.message);
     data = await JSON.parse(JSON.stringify(pizzaData)); // step required during deployment in staticProps
-    console.log(data);
+    // console.log(data);
   } catch (error) {
     console.log(error.message);
   }

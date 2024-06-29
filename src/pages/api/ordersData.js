@@ -11,7 +11,7 @@ export default async function handler(req, res) {
       let data = req.body.order_data;
       await data.splice(0, 0, { order_date: req.body.order_date });
      
-      console.log(data);
+      // console.log(data);
 
       let eId = await Orders.findOne({ email: req.body.email });
       if (eId === null) {

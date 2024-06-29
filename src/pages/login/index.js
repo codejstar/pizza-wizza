@@ -20,13 +20,13 @@ const Login = () => {
       }),
     });
     const res = await response.json();
-    console.log(res.isAdmin);
+    // console.log(res.isAdmin);
 
     if (res.success) {
       localStorage.setItem("token", res.authToken);
       localStorage.setItem("userEmail", credentials.email);
       localStorage.setItem("isAdmin", await JSON.parse(res.isAdmin));
-      console.log( await JSON.parse(res.isAdmin));
+      // console.log( await JSON.parse(res.isAdmin));
       router.push("/");
       //logic for signup
     } else {
