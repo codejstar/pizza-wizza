@@ -1,3 +1,4 @@
+ /* eslint-disable */
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
@@ -13,9 +14,13 @@ function Orders() {
       body: JSON.stringify({ email: localStorage.getItem("userEmail") }),
     }).then(async (res) => {
       let response = await res.json();
+      // console.log(response?.order_data?.order_data);
       setOrdersData(response?.order_data?.order_data);
+      // console.log(response?.order_data?.order_data);
     });
   };
+
+
 
   useEffect(() => {
     fetchData();

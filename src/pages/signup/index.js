@@ -30,7 +30,7 @@ const Signup = () => {
     if (res.success) {
       localStorage.setItem("token", res.authToken);
       localStorage.setItem("userEmail", credentials.email);
-      localStorage.setItem("isAdmin", false);
+      // localStorage.setItem("isAdmin", false);
       router.push("/");
       //logic for signup
     } else {

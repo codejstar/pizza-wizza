@@ -6,6 +6,7 @@ export default async function handler(req, res) {
     await db.connect();
     try {
       let data = await Orders.findOne({ email: req.body.email });
+      // console.log(data);
       res.json({ order_data: data });
     } catch (error) {
       res.send("Server error: " + error.message);
